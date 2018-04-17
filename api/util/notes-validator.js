@@ -1,5 +1,5 @@
 const validator = require('validator');
-const validCodes = [200,201,202,204,404,404,500];
+const validCodes = [200, 201, 202, 204, 404, 404, 500];
 
 noteValidForAdd = (note) => {
     return requiredFieldsPopulated(note);
@@ -16,18 +16,18 @@ noteValidForDelete = (note) => {
 
 
 isValidErrorCode = (errorCode) => {
-    return validCodes.includes( errorCode );
+    return validCodes.includes(errorCode);
 };
 
 /* private */
 requiredFieldsPopulated = (note) => {
-    return  note.description &&
-            note.value;
+    return note.description &&
+        note.value;
 };
 
 /* private */
 idPopulated = (note) => {
-    return  (note.noteId && validator.isAlphanumeric(note.noteId));
+    return (note.noteId && validator.isAlphanumeric(note.noteId));
 };
 
 module.exports = {

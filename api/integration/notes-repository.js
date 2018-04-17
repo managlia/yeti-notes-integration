@@ -1,24 +1,27 @@
 const pgp = require('pg-promise')({});
-const cn = 'postgres://test:test@localhost:5432/yeti';
-const db = pgp(cn);
-const chalk = require('chalk');
+const Constants = require('../util/constants');
+const logger = require('../util/logger');
 
-const log = (elem, f, l) => console.log(chalk.green(`${f}(${l}): REPOSITORY: ${elem}`));
+const db = pgp(Constants.PG_PATH);
 
 const getAllNotes = () => {
-    log('getAllNotes', __function, __line);
+    logger.abcde('all notes without any filter', __function, __line, __file);
     return db.any('SELECT * FROM public.notes');
 };
 
 const getAllNotesFiltered = (filterString) => {
-    log('getAllNotes filtered with ' + filterString, __function, __line);
-    return db.any(`SELECT * FROM public.notes WHERE note_value ILIKE '%$1:value%'`, [filterString] );
+    logger.abcde(`calling db to get filtered set of all notes`, __function, __line, __file);
+    return db.any(`SELECT * FROM public.notes 
+        WHERE 
+        note_value ILIKE '%$1:value%'
+        OR
+        note_description ILIKE '%$1:value%'`, [filterString]);
 };
 
 const getOneNote = (id) => {
-    log(`getOneNote with id === ${id}`, __function, __line);
+    logger.abcde(`calling db to get one note`, __function, __line, __file);
     return db.one(
-    `SELECT * FROM
+        `SELECT * FROM
         public.notes
         WHERE note_id = $1
         LIMIT 1`,
@@ -27,7 +30,7 @@ const getOneNote = (id) => {
 };
 
 const getOneOrNoneNote = (id) => {
-    log(`getOneNote with id === ${id}`, __function, __line);
+    logger.abcde(`calling db to get one (or none) note to see if it exists`, __function, __line, __file);
     return db.oneOrNone(
         `SELECT * FROM
         public.notes
@@ -37,67 +40,67 @@ const getOneOrNoneNote = (id) => {
     );
 };
 
-
 const addNote = (note) => {
-  log(`addNote with note === ${JSON.stringify(note)}`, __function, __line);
-  return db.one(`
-    INSERT INTO public.notes
-        (note_creator_id, note_creator_external_id, note_description,
-         note_value, linked_to_entity_type, linked_to_entity_id)
-    	VALUES
-        ($1, $2, $3, $4, $5, $6)
-      RETURNING
-        *`,
+    logger.abcde(`calling db to add a new note`, __function, __line, __file);
+    return db.one(`
+        INSERT INTO public.notes
+            (note_creator_id, note_creator_external_id, note_description,
+             note_value, linked_to_entity_type, linked_to_entity_id)
+            VALUES
+            ($1, $2, $3, $4, $5, $6)
+          RETURNING
+            *`,
         [note.creatorId,
-        note.creatorExternalId,
-        note.description,
-        note.value,
-        note.exntityType,
-        note.entityId]
+            note.creatorExternalId,
+            note.description,
+            note.value,
+            note.exntityType,
+            note.entityId]
     );
 };
 
 const updateNote = (note) => {
-  log(`updateNote with note === ${JSON.stringify(note)}`, __function, __line);
-  return db.one(`
-    UPDATE public.notes
-    SET note_description = $2,
-        note_value = $3,
-        note_archived = $4
-    WHERE
-      note_id = $1
-    RETURNING
-        *`,
+    logger.abcde(`calling db to update an existing note`, __function, __line, __file);
+    return db.one(`
+        UPDATE public.notes
+        SET note_description = $2,
+            note_value = $3,
+            note_archived = $4
+        WHERE
+          note_id = $1
+        RETURNING
+            *`,
         [note.noteId,
-        note.description,
-        note.value,
-        note.isArchived]
+            note.description,
+            note.value,
+            note.isArchived]
     );
 };
 
 const deleteNote = (id) => {
-  log(`deleteNote with id === ${id}`, __function, __line);
-  return db.any(
-    `DELETE FROM
-      public.notes
-      WHERE
-        note_id = $1
-      RETURNING
-        * `,
-      [id]
-  );
+    logger.abcde(`calling db to delete an existing note`, __function, __line, __file);
+    return db.any(
+        `DELETE FROM
+          public.notes
+          WHERE
+            note_id = $1
+          RETURNING
+            * `,
+        [id]
+    );
 };
 
 const closeConnection = () => {
-  pgp.end();
+    pgp.end();
 };
 
 module.exports = {
-  getAllNotes,
-  getAllNotesFiltered,
-  getOneNote,
-  getOneOrNoneNote,
-  addNote,
-  updateNote,
-  deleteNote
+    getAllNotes,
+    getAllNotesFiltered,
+    getOneNote,
+    getOneOrNoneNote,
+    addNote,
+    updateNote,
+    deleteNote,
+    closeConnection
 };

@@ -1,69 +1,55 @@
-const chalk = require('chalk');
 const parseUrl = require('parseurl');
-const bodyParser = require('body-parser')
+const {URLSearchParams} = require('url');
+
 const notesService = require('../service/note-service');
 const notesValidator = require('../util/notes-validator');
-const { URLSearchParams } = require('url');
-const jsonParser = bodyParser.json();
-
-const log = (elem) => console.log(chalk.blue(elem));
-
-const HTTP_200 = 200;
-const HTTP_201 = 201;
-const HTTP_202 = 202;
-const HTTP_400 = 400;
-const HTTP_404 = 404;
-
-const ERROR_400 = {message: 'Posted data is invalid', code: HTTP_400};
-const ERROR_404 = {message: 'Item not found', code: HTTP_404};
+const Constants = require('../util/constants');
+const logger = require('../util/logger');
 
 getAllNotes = (req, res) => {
-    log('CONTROLLER:: getAllNotes');
+    logger.abcde('bbb getting all notes whether there are fitlers or not', __function, __line, __file);
     const params = new URLSearchParams(parseUrl(req).query);
     const filterString = params.get('filter');
     // with express, could use:  const filterString = req.query.filter;
-    notesService.getAllNotes(filterString).then( (result) => wrapResonse(res, result, HTTP_200) );
+    notesService.getAllNotes(filterString).then((result) => wrapResonse(res, result, Constants.HTTP_200));
 };
 
 getOneNote = (req, res) => {
-    log('CONTROLLER:: getOneNote');
+    logger.abcde('getting one note; an existing id is required', __function, __line, __file);
     const id = req.params.id;
     notesService.getOneNote(id)
-        .then((result) => wrapResonse(res, result, HTTP_200))
+        .then((result) => wrapResonse(res, result, Constants.HTTP_200))
         .catch((err) => wrapError(res, err));
 };
 
 addNote = (req, res) => {
-    log('CONTROLLER:: addNote');
+    logger.abcde('adding a note; will get the value from the request body', __function, __line, __file);
     const note = req.body;
-    if( notesValidator.noteValidForAdd(note) ) {
+    if (notesValidator.noteValidForAdd(note)) {
         notesService.addNote(note)
-            .then((result) => wrapResonse(res, result, HTTP_201))
+            .then((result) => wrapResonse(res, result, Constants.HTTP_201))
             .catch((err) => wrapResonse(res, err));
     } else {
-        wrapError(res, ERROR_400);
+        wrapError(res, Constants.ERROR_400);
     }
 };
 
 updateNote = (req, res) => {
-    log('CONTROLLER:: updateNote');
+    logger.abcde('updating an existing note; will validate a match between body id and urlstring id', __function, __line, __file);
     const id = req.params.id;
     const note = req.body;
     const noteId = req.body.noteId;
-    if( parseInt(id) !== parseInt(noteId) ) {
-        wrapError(res, ERROR_400);
+    if (parseInt(id) !== parseInt(noteId)) {
+        wrapError(res, Constants.ERROR_400);
     } else {
         notesService.exists(id).then(
             (exists) => {
-                if(exists) {
+                if (exists) {
                     notesService.updateNote(note)
-                        .then((result) => {
-                            log('controller result: ' + JSON.stringify(result));
-                            wrapResonse(res, result, HTTP_202)
-                        })
+                        .then((result) => wrapResonse(res, result, Constants.HTTP_202))
                         .catch((err) => wrapError(res, err))
                 } else {
-                    wrapError(res, ERROR_404);
+                    wrapError(res, Constants.ERROR_404);
                 }
             })
             .catch((err) => wrapError(res, err));
@@ -71,30 +57,30 @@ updateNote = (req, res) => {
 };
 
 deleteNote = (req, res) => {
-    log('CONTROLLER:: deleteNote');
+    logger.abcde('deleting one note; an existing id is required', __function, __line, __file);
     const id = req.params.id;
     notesService.exists(id).then(
         (exists) => {
-            if(exists) {
+            if (exists) {
                 notesService.deleteNote(id)
-                    .then((result) => wrapResonse(res, result, HTTP_202))
+                    .then((result) => wrapResonse(res, result, Constants.HTTP_202))
                     .catch((err) => wrapError(res, err))
             } else {
-                wrapError(res, ERROR_404);
+                wrapError(res, Constants.ERROR_404);
             }
         })
-    .catch((err) => wrapError(res, err));
+        .catch((err) => wrapError(res, err));
 };
 
 patchNotes = (req, res) => {
-    log('CONTROLLER:: patchNotes');
-    notesService.deleteNote(id).then( (result) => wrapResonse(res, result, HTTP_202) );
+    logger.abcde('patch is not configured to do anything yet', __function, __line, __file);
+    notesService.patchNotes().then((result) => wrapResonse(res, result, Constants.HTTP_200));
 };
 
 /* private */
 wrapResonse = (res, result, status) => {
-    res.writeHead(status, { 'Content-Type': 'application/json' });
-    res.end( JSON.stringify(result) );
+    res.writeHead(status, {'Content-Type': 'application/json'});
+    res.end(JSON.stringify(result));
     return res;
 };
 
@@ -102,11 +88,11 @@ wrapResonse = (res, result, status) => {
 wrapError = (res, err) => {
     console.error(err);
     let errorCode = err.code;
-    if( !notesValidator.isValidErrorCode(errorCode) ) {
-        errorCode = HTTP_400;
+    if (!notesValidator.isValidErrorCode(errorCode)) {
+        errorCode = Constants.HTTP_400;
     }
-    res.writeHead(errorCode, { 'Content-Type': 'application/json' });
-    res.end( JSON.stringify(err) );
+    res.writeHead(errorCode, {'Content-Type': 'application/json'});
+    res.end(JSON.stringify(err));
     return res;
 };
 
