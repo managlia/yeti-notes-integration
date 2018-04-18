@@ -1,10 +1,10 @@
 const gulp = require('gulp');
-const uglify = require('gulp-uglify');
+let uglify = require('gulp-uglify-es').default;
 const livereload = require('gulp-livereload');
 const nodemon = require('gulp-nodemon');
+const notify = require('gulp-notify');
 const plumber = require('gulp-plumber');
 const sourcemaps = require('gulp-sourcemaps');
-const babel = require('gulp-babel');
 const del = require('del');
 const zip = require('gulp-zip');
 
@@ -22,20 +22,10 @@ gulp.task('scripts', () => {
             this.emit('end');
         })
         .pipe(sourcemaps.init())
-        .pipe(babel({
-            presets: ['es2015']
-        }))
-        .pipe(uglify({mangle: false}))
+        .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(DIST_PATH))
         .pipe(livereload());
-});
-
-gulp.task('develop', function () {
-    const stream = nodemon({script: './server.js'});
-    stream
-        .on('restart', () => console.log('restarted!'))
-        .on('crash', () => stream.emit('restart', 10))
 });
 
 gulp.task('clean', () => {
@@ -55,8 +45,10 @@ gulp.task('default', ['clean', 'scripts'], () => {
 });
 
 gulp.task('watch', ['default'], () => {
-    console.log('starting watch task');
-    require('./server.js');
+    const stream = nodemon({script: './server.js'});
+    stream
+        .on('restart', () => console.log('restarted!'))
+        .on('crash', () => stream.emit('restart', 10))
     livereload.listen();
     gulp.watch(SCRIPTS_PATH, ['scripts']);
 });

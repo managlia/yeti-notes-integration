@@ -26,8 +26,9 @@
 /*******************************************/
 const http = require('http');
 const finalhandler = require('finalhandler');
-fs = require('fs');
-const plainRouter = require('./api/routes/plain-routes');
+const fs = require('fs');
+// use with "gulp watch": const plainRouter = require('./dist/routes/plain-routes');
+const plainRouter = require('./api/routes/plain-routes'); //for local using "npm start"
 
 const server = http.createServer(function (req, res) {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -41,5 +42,4 @@ const server = http.createServer(function (req, res) {
 });
 
 const port2 = 5001;
-console.log('listing on 5001 too');
 server.listen(port2, () => console.log(`Listening on port ${port2}`));

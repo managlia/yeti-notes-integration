@@ -1,6 +1,6 @@
 const Note = require('../model/note');
 
-mapRespositoryNoteToModel = (repositoryNote) => {
+const mapRespositoryNoteToModel = (repositoryNote) => {
     let note = new Note();
     note.noteId = repositoryNote.note_id;
     note.creatorId = repositoryNote.note_creator_id;

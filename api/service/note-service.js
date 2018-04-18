@@ -3,7 +3,7 @@ const Constants = require('../util/constants');
 const Converter = require('../util/converter');
 const logger = require('../util/logger');
 
-getAllNotes = (filterString) => {
+const getAllNotes = (filterString) => {
     logger.abcde(`will call one of two functions based on value of filterString (${filterString})`, __function, __line, __file);
     if (filterString) {
         return getAllWithFilter(filterString);
@@ -11,7 +11,7 @@ getAllNotes = (filterString) => {
     return getAllWithoutFilter();
 };
 
-getOneNote = (id) => {
+const getOneNote = (id) => {
     logger.abcde(`will get one using id (${id})`, __function, __line, __file);
     return new Promise((resolve, reject) => {
         notesRespository.getOneNote(id)
@@ -21,7 +21,7 @@ getOneNote = (id) => {
     });
 };
 
-exists = (id) => {
+const exists = (id) => {
     logger.abcde(`checking if record exists using (${id})`, __function, __line, __file);
     return new Promise((resolve, reject) => {
         notesRespository.getOneOrNoneNote(id)
@@ -30,7 +30,7 @@ exists = (id) => {
     });
 };
 
-addNote = (note) => {
+const addNote = (note) => {
     logger.abcde(`adding this new note: ${JSON.stringify(note)}`, __function, __line, __file);
     return new Promise((resolve, reject) => {
         notesRespository.addNote(note)
@@ -39,7 +39,7 @@ addNote = (note) => {
     });
 };
 
-updateNote = (note) => {
+const updateNote = (note) => {
     logger.abcde(`updating this existing note: ${JSON.stringify(note)}`, __function, __line, __file);
     return new Promise((resolve, reject) => {
         notesRespository.updateNote(note)
@@ -48,7 +48,7 @@ updateNote = (note) => {
     });
 };
 
-deleteNote = (id) => {
+const deleteNote = (id) => {
     logger.abcde(`will delete one note using id (${id})`, __function, __line, __file);
     return new Promise((resolve, reject) => {
         notesRespository.deleteNote(id)
@@ -57,7 +57,7 @@ deleteNote = (id) => {
     });
 };
 
-patchNotes = () => {
+const patchNotes = () => {
     logger.abcde('patch is not configured to do anything yet', __function, __line, __file);
     return new Promise((resolve, reject) => {
         resolve('patch is not configured');
@@ -65,7 +65,7 @@ patchNotes = () => {
 };
 
 /* private */
-getAllWithoutFilter = () => {
+const getAllWithoutFilter = () => {
     logger.abcde(`unfettered request`, __function, __line, __file);
     return new Promise((resolve, reject) => {
         notesRespository.getAllNotes()
@@ -75,7 +75,7 @@ getAllWithoutFilter = () => {
 };
 
 /* private */
-getAllWithFilter = (filterString) => {
+const getAllWithFilter = (filterString) => {
     logger.abcde(`filtered request with ${filterString}`, __function, __line, __file);
     return new Promise((resolve, reject) => {
         notesRespository.getAllNotesFiltered(filterString)
@@ -85,7 +85,7 @@ getAllWithFilter = (filterString) => {
 };
 
 /* private */
-standardizeError = (error, code) => {
+const standardizeError = (error, code) => {
     logger.errro(`ERROR:: ${error}`, __function, __line, __file);
     return {
         message: error.message,

@@ -6,35 +6,35 @@ const notesValidator = require('../util/notes-validator');
 const Constants = require('../util/constants');
 const logger = require('../util/logger');
 
-getAllNotes = (req, res) => {
-    logger.abcde('bbb getting all notes whether there are fitlers or not', __function, __line, __file);
+const getAllNotes = (req, res) => {
+    logger.abcde('getting all notes whether there are fitlers or not', __function, __line, __file);
     const params = new URLSearchParams(parseUrl(req).query);
     const filterString = params.get('filter');
     // with express, could use:  const filterString = req.query.filter;
-    notesService.getAllNotes(filterString).then((result) => wrapResonse(res, result, Constants.HTTP_200));
+    notesService.getAllNotes(filterString).then((result) => wrapResponse(res, result, Constants.HTTP_200));
 };
 
-getOneNote = (req, res) => {
+const getOneNote = (req, res) => {
     logger.abcde('getting one note; an existing id is required', __function, __line, __file);
     const id = req.params.id;
     notesService.getOneNote(id)
-        .then((result) => wrapResonse(res, result, Constants.HTTP_200))
+        .then((result) => wrapResponse(res, result, Constants.HTTP_200))
         .catch((err) => wrapError(res, err));
 };
 
-addNote = (req, res) => {
+const addNote = (req, res) => {
     logger.abcde('adding a note; will get the value from the request body', __function, __line, __file);
     const note = req.body;
     if (notesValidator.noteValidForAdd(note)) {
         notesService.addNote(note)
-            .then((result) => wrapResonse(res, result, Constants.HTTP_201))
-            .catch((err) => wrapResonse(res, err));
+            .then((result) => wrapResponse(res, result, Constants.HTTP_201))
+            .catch((err) => wrapResponse(res, err));
     } else {
         wrapError(res, Constants.ERROR_400);
     }
 };
 
-updateNote = (req, res) => {
+const updateNote = (req, res) => {
     logger.abcde('updating an existing note; will validate a match between body id and urlstring id', __function, __line, __file);
     const id = req.params.id;
     const note = req.body;
@@ -46,7 +46,7 @@ updateNote = (req, res) => {
             (exists) => {
                 if (exists) {
                     notesService.updateNote(note)
-                        .then((result) => wrapResonse(res, result, Constants.HTTP_202))
+                        .then((result) => wrapResponse(res, result, Constants.HTTP_202))
                         .catch((err) => wrapError(res, err))
                 } else {
                     wrapError(res, Constants.ERROR_404);
@@ -56,14 +56,14 @@ updateNote = (req, res) => {
     }
 };
 
-deleteNote = (req, res) => {
+const deleteNote = (req, res) => {
     logger.abcde('deleting one note; an existing id is required', __function, __line, __file);
     const id = req.params.id;
     notesService.exists(id).then(
         (exists) => {
             if (exists) {
                 notesService.deleteNote(id)
-                    .then((result) => wrapResonse(res, result, Constants.HTTP_202))
+                    .then((result) => wrapResponse(res, result, Constants.HTTP_202))
                     .catch((err) => wrapError(res, err))
             } else {
                 wrapError(res, Constants.ERROR_404);
@@ -72,20 +72,20 @@ deleteNote = (req, res) => {
         .catch((err) => wrapError(res, err));
 };
 
-patchNotes = (req, res) => {
+const patchNotes = (req, res) => {
     logger.abcde('patch is not configured to do anything yet', __function, __line, __file);
-    notesService.patchNotes().then((result) => wrapResonse(res, result, Constants.HTTP_200));
+    notesService.patchNotes().then((result) => wrapResponse(res, result, Constants.HTTP_200));
 };
 
 /* private */
-wrapResonse = (res, result, status) => {
+const wrapResponse = (res, result, status) => {
     res.writeHead(status, {'Content-Type': 'application/json'});
     res.end(JSON.stringify(result));
     return res;
 };
 
 /* private */
-wrapError = (res, err) => {
+const wrapError = (res, err) => {
     console.error(err);
     let errorCode = err.code;
     if (!notesValidator.isValidErrorCode(errorCode)) {

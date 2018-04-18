@@ -1,32 +1,31 @@
 const validator = require('validator');
 const validCodes = [200, 201, 202, 204, 404, 404, 500];
 
-noteValidForAdd = (note) => {
+const noteValidForAdd = (note) => {
     return requiredFieldsPopulated(note);
 };
 
-noteValidForUpdate = (note) => {
+const noteValidForUpdate = (note) => {
     return idPopulated(note) &&
         requiredFieldsPopulated(note);
 };
 
-noteValidForDelete = (note) => {
+const noteValidForDelete = (note) => {
     return idPopulated(note);
 };
 
-
-isValidErrorCode = (errorCode) => {
+const isValidErrorCode = (errorCode) => {
     return validCodes.includes(errorCode);
 };
 
 /* private */
-requiredFieldsPopulated = (note) => {
+const requiredFieldsPopulated = (note) => {
     return note.description &&
         note.value;
 };
 
 /* private */
-idPopulated = (note) => {
+const idPopulated = (note) => {
     return (note.noteId && validator.isAlphanumeric(note.noteId));
 };
 
