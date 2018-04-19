@@ -1,10 +1,10 @@
-class Note {
+class YetiNote {
     // noteId;
     // creatorId;
     // creatorExternalId;
     // description;
     // value;
-    // exntityType;
+    // entityType;
     // entityId;
     // isArchived;
     // createDate;
@@ -14,4 +14,4 @@ class Note {
     }
 }
 
-module.exports = Note;
+module.exports = YetiNote;

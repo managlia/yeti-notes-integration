@@ -3,12 +3,12 @@ const Constants = require('../util/constants');
 const Converter = require('../util/converter');
 const logger = require('../util/logger');
 
-const getAllNotes = (filterString) => {
+const getAllNotes = (filterString, entityType, entityId) => {
     logger.abcde(`will call one of two functions based on value of filterString (${filterString})`, __function, __line, __file);
     if (filterString) {
-        return getAllWithFilter(filterString);
+        return getAllWithFilter(filterString, entityType, entityId);
     }
-    return getAllWithoutFilter();
+    return getAllWithoutFilter(entityType, entityId);
 };
 
 const getOneNote = (id) => {
@@ -65,20 +65,20 @@ const patchNotes = () => {
 };
 
 /* private */
-const getAllWithoutFilter = () => {
+const getAllWithoutFilter = (entityType, entityId) => {
     logger.abcde(`unfettered request`, __function, __line, __file);
     return new Promise((resolve, reject) => {
-        notesRespository.getAllNotes()
+        notesRespository.getAllNotes(entityType, entityId)
             .then((result) => resolve(result.map(e => Converter.mapRespositoryNoteToModel(e))))
             .catch((err) => reject(standardizeError(err, Constants.HTTP_400)));
     });
 };
 
 /* private */
-const getAllWithFilter = (filterString) => {
+const getAllWithFilter = (filterString, entityType, entityId) => {
     logger.abcde(`filtered request with ${filterString}`, __function, __line, __file);
     return new Promise((resolve, reject) => {
-        notesRespository.getAllNotesFiltered(filterString)
+        notesRespository.getAllNotesFiltered(filterString, entityType, entityId)
             .then((result) => resolve(result.map(e => Converter.mapRespositoryNoteToModel(e))))
             .catch((err) => reject(standardizeError(err, Constants.HTTP_400)))
     });

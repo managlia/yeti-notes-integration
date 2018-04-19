@@ -1,21 +1,29 @@
-const pgp = require('pg-promise')({});
 const Constants = require('../util/constants');
 const logger = require('../util/logger');
+const db = Constants.dbConnection;
 
-const db = pgp(Constants.PG_PATH);
-
-const getAllNotes = () => {
+const getAllNotes = (entityType, entityId) => {
     logger.abcde('all notes without any filter', __function, __line, __file);
-    return db.any('SELECT * FROM public.notes');
+    return db.any(`SELECT * FROM public.notes
+            WHERE 
+                  (
+                  linked_to_entity_type = $1
+              AND
+                  linked_to_entity_id = $2
+                  )          
+                `, [entityType, entityId]);
 };
 
-const getAllNotesFiltered = (filterString) => {
-    logger.abcde(`calling db to get filtered set of all notes`, __function, __line, __file);
+const getAllNotesFiltered = (filterString, entityType, entityId) => {
+    logger.abcde(`calling db to get filtered set of all notes (${filterString}, ${entityType}, ${entityId})`, __function, __line, __file);
     return db.any(`SELECT * FROM public.notes 
-        WHERE 
-        note_value ILIKE '%$1:value%'
-        OR
-        note_description ILIKE '%$1:value%'`, [filterString]);
+        WHERE (linked_to_entity_type = $1 AND linked_to_entity_id = $2)          
+          AND (
+            note_value ILIKE '%$3:value%'
+                OR
+            note_description ILIKE '%$3:value%'
+            )
+        `, [entityType, entityId, filterString]);
 };
 
 const getOneNote = (id) => {
@@ -54,7 +62,7 @@ const addNote = (note) => {
             note.creatorExternalId,
             note.description,
             note.value,
-            note.exntityType,
+            note.entityType,
             note.entityId]
     );
 };
@@ -90,10 +98,6 @@ const deleteNote = (id) => {
     );
 };
 
-const closeConnection = () => {
-    pgp.end();
-};
-
 module.exports = {
     getAllNotes,
     getAllNotesFiltered,
@@ -101,6 +105,5 @@ module.exports = {
     getOneOrNoneNote,
     addNote,
     updateNote,
-    deleteNote,
-    closeConnection
+    deleteNote
 };

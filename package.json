@@ -13,9 +13,12 @@
     "ajv": "^6.4.0",
     "body-parser": "^1.18.2",
     "chalk": "^2.3.2",
+    "client-oauth2": "^4.2.0",
     "elasticsearch": "^14.2.2",
     "express": "^4.16.3",
     "finalhandler": "^1.1.1",
+    "form-data": "^2.3.2",
+    "formidable": "^1.2.1",
     "gulp-nodemon": "^2.2.1",
     "joi": "^13.1.2",
     "morgan": "^1.9.0",
@@ -42,6 +45,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-uglify-es": "^1.0.1",
     "gulp-zip": "^4.1.0",
+    "mocha": "^5.1.0",
     "nodemon": "^1.17.3",
     "uglify-es": "^3.3.9"
   }

@@ -10,8 +10,13 @@ const getAllNotes = (req, res) => {
     logger.abcde('getting all notes whether there are fitlers or not', __function, __line, __file);
     const params = new URLSearchParams(parseUrl(req).query);
     const filterString = params.get('filter');
-    // with express, could use:  const filterString = req.query.filter;
-    notesService.getAllNotes(filterString).then((result) => wrapResponse(res, result, Constants.HTTP_200));
+    const entityType = params.get('entityType');
+    const entityId = params.get('entityId');
+    if( !entityType || !entityId ) {
+        wrapError(res, Constants.PARAM_ERROR, Constants.PARAM_ERROR.code);
+    } else {
+        notesService.getAllNotes(filterString, entityType, entityId).then((result) => wrapResponse(res, result, Constants.HTTP_200));
+    }
 };
 
 const getOneNote = (req, res) => {

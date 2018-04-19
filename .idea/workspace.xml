@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0488fb2c-764b-482a-b994-493d559293c5" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/api/controllers/files-controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/integration/files-repository.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/model/yeti-file.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/service/file-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/util/file-validator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/controllers/notes-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/notes-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/integration/notes-repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/integration/notes-repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/model/note.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/model/yeti-note.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/plain-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/plain-routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/service/note-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/service/note-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/util/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/util/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/util/converter.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/util/converter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/util/logger.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/util/logger.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/util/notes-validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/util/notes-validator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
@@ -25,14 +34,95 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="notes-controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/controllers/notes-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-972">
+              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="converter.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/util/converter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="21" column="28" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="files-controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/controllers/files-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="30" column="87" selection-start-line="30" selection-start-column="87" selection-end-line="30" selection-end-column="87" />
+            <state relative-caret-position="544">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notes-repository.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/integration/notes-repository.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" lean-forward="true" selection-start-line="2" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="file-validator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/util/file-validator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notes-validator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/util/notes-validator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plain-routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/routes/plain-routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="file-service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/service/file-service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="918">
+              <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="note-service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/service/note-service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="39" selection-start-line="34" selection-end-line="39" />
             </state>
           </provider>
         </entry>
@@ -48,36 +138,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sourcemaps</find>
-      <find>sasssass</find>
-      <find>SCRIPTS_PATH</find>
-      <find>handlebarshandlebars</find>
-      <find>declare</find>
-      <find>wrap</find>
-      <find>zip</find>
-      <find>sass</find>
-      <find>conc</find>
-      <find>api</find>
-      <find>getLocationString</find>
-      <find>ERROR</find>
-      <find>logger.debug</find>
-      <find>debug</find>
-      <find>logger.err</find>
-      <find>debugX((</find>
-      <find>logger</find>
-      <find>liner</find>
-      <find>repository</find>
-      <find>notesRespoinst</find>
-      <find>finally</find>
-      <find>jsonParser</find>
-      <find>wrapResonse</find>
-      <find>mapRespositoryNoteToModel</find>
-      <find>mangle</find>
-      <find>glob</find>
-      <find>__function, __line, __file</find>
-      <find>babel</find>
-      <find>uglify</find>
       <find>nodemon</find>
+      <find>filter</find>
+      <find>exntityType</find>
+      <find>entityType</find>
+      <find>entity</find>
+      <find>ent</find>
+      <find>err</find>
+      <find>util</find>
+      <find>;</find>
+      <find>parseU</find>
+      <find>body</find>
+      <find>add</find>
+      <find>getOneOrNoneFile</find>
+      <find>exists</find>
+      <find>file</find>
+      <find>pgp</find>
+      <find>fileValidForAdd</find>
+      <find>files</find>
+      <find>fileRepository</find>
+      <find>addFile</find>
+      <find>Note</find>
+      <find>isv</find>
+      <find>validator</find>
+      <find>formidable</find>
+      <find>path</find>
+      <find>url</find>
+      <find>filesSer</find>
+      <find>filesService</find>
+      <find>error</find>
+      <find>note</find>
     </findStrings>
     <replaceStrings>
       <replace>;</replace>
@@ -92,8 +182,18 @@
       <replace>logger.debug</replace>
       <replace>logger.debugX(</replace>
       <replace>debugX(</replace>
+      <replace>yetiFile.</replace>
       <replace>wrapResponse</replace>
+      <replace>=</replace>
+      <replace>fileRepository</replace>
+      <replace>filesRepository</replace>
+      <replace>File</replace>
+      <replace>fileService</replace>
+      <replace>file</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>C:\workspace\yeti-notes-integration\api</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -112,19 +212,26 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/dist/test.js" />
         <option value="$PROJECT_DIR$/api/util/loggerr.js" />
-        <option value="$PROJECT_DIR$/api/integration/notes-repository.js" />
-        <option value="$PROJECT_DIR$/api/model/note.js" />
-        <option value="$PROJECT_DIR$/api/routes/plain-routes.js" />
         <option value="$PROJECT_DIR$/api/routes/yeti-routes.js" />
-        <option value="$PROJECT_DIR$/api/service/note-service.js" />
-        <option value="$PROJECT_DIR$/api/util/constants.js" />
-        <option value="$PROJECT_DIR$/api/util/converter.js" />
         <option value="$PROJECT_DIR$/api/util/logger.js" />
         <option value="$PROJECT_DIR$/api/util/notes-validator.js" />
         <option value="$PROJECT_DIR$/api/util/liner.js" />
-        <option value="$PROJECT_DIR$/api/controllers/notes-controller.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/api/service/note-service.js" />
+        <option value="$PROJECT_DIR$/api/model/note.js" />
+        <option value="$PROJECT_DIR$/api/model/file.js" />
+        <option value="$PROJECT_DIR$/api/integration/notes-repository.js" />
+        <option value="$PROJECT_DIR$/api/controllers/file-controller.js" />
+        <option value="$PROJECT_DIR$/api/integration/file-repository.js" />
+        <option value="$PROJECT_DIR$/api/util/converter.js" />
+        <option value="$PROJECT_DIR$/api/util/constants.js" />
+        <option value="$PROJECT_DIR$/api/model/yeti-file.js" />
+        <option value="$PROJECT_DIR$/api/service/file-service.js" />
+        <option value="$PROJECT_DIR$/api/routes/plain-routes.js" />
+        <option value="$PROJECT_DIR$/api/util/file-validator.js" />
+        <option value="$PROJECT_DIR$/api/controllers/notes-controller.js" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/api/controllers/files-controller.js" />
       </list>
     </option>
   </component>
@@ -145,9 +252,9 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="241" />
-    <option name="y" value="39" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="50" />
+    <option name="y" value="26" />
     <option name="width" value="1623" />
     <option name="height" value="992" />
   </component>
@@ -223,7 +330,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -266,30 +373,30 @@
       <workItem from="1523803352132" duration="12320000" />
       <workItem from="1523883479826" duration="22685000" />
       <workItem from="1523914786643" duration="30168000" />
-      <workItem from="1523999375115" duration="8637000" />
+      <workItem from="1523999375115" duration="48918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73810000" />
+    <option name="totallyTimeSpent" value="114091000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="241" y="39" width="1623" height="992" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.35497835" />
-      <window_info id="npm" order="0" sideWeight="0.15813954" side_tool="true" visible="true" weight="0.20694007" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.2034632" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.8418605" visible="true" weight="0.20694007" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.2564935" />
+      <window_info id="npm" order="0" sideWeight="0.24163027" side_tool="true" visible="true" weight="0.19652265" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.2857143" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.75836974" visible="true" weight="0.19652265" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.14502165" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.32900432" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.28030303" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.3300866" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.43398267" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -303,6 +410,14 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="3" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/api/controllers/notes-controller.js">
@@ -357,7 +472,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/model/note.js">
+    <entry file="file://$PROJECT_DIR$/api/model/yeti-note.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
@@ -416,7 +531,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/model/note.js">
+    <entry file="file://$PROJECT_DIR$/api/model/yeti-note.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" selection-start-line="1" selection-end-line="10" selection-end-column="16" />
@@ -451,7 +566,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/model/note.js">
+    <entry file="file://$PROJECT_DIR$/api/model/yeti-note.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" selection-start-line="1" selection-end-line="10" selection-end-column="16" />
@@ -499,28 +614,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/util/notes-validator.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/util/logger.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/util/constants.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/service/note-service.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/yeti-routes.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/plain-routes.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/model/note.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/integration/notes-repository.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/api/util/liner.js">
@@ -530,30 +624,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/controllers/notes-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/api/model/file">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="180">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/integration/files-repository.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/yeti-routes.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/util/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/model/yeti-note.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" selection-start-line="1" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/model/yeti-file.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" selection-start-line="1" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/util/notes-validator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/util/file-validator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/integration/notes-repository.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" lean-forward="true" selection-start-line="2" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/util/converter.js">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="28" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="30" column="87" selection-start-line="30" selection-start-column="87" selection-end-line="30" selection-end-column="87" />
+        <state relative-caret-position="544">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/controllers/notes-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-972">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/service/file-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/service/note-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="39" selection-start-line="34" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/plain-routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/controllers/files-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
