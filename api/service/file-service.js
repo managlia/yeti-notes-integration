@@ -3,6 +3,17 @@ const Constants = require('../util/constants');
 const Converter = require('../util/converter');
 const logger = require('../util/logger');
 
+
+const getAllFilesUnfettered = () => {
+    logger.abcde(`retrieving the file list unfettered style`, __function, __line, __file);
+    return new Promise((resolve, reject) => {
+        filesRepository.getAllFilesUnfettered()
+            .then((result) => resolve(result.map(e => Converter.mapRespositoryFileToModel(e))))
+            .catch((err) => reject(standardizeError(err, Constants.HTTP_400)));
+    });
+};
+
+
 const getAllFiles = (entityType, entityId) => {
     logger.abcde(`retrieving the file list for ${entityType}:${entityId}`, __function, __line, __file);
     return new Promise((resolve, reject) => {
@@ -65,6 +76,7 @@ const standardizeError = (error, code) => {
 };
 
 module.exports = {
+    getAllFilesUnfettered,
     getAllFiles,
     getOneFile,
     exists,

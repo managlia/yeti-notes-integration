@@ -3,6 +3,11 @@ const logger = require('../util/logger');
 
 const db = Constants.dbConnection;
 
+const getAllFilesUnfettered = () => {
+    logger.abcde('all files without any filter - unfettered style', __function, __line, __file);
+    return db.any(`SELECT * FROM public.files`);
+};
+
 const getAllFiles = (entityType, entityId) => {
     logger.abcde('all files without any filter', __function, __line, __file);
     return db.any(`SELECT * FROM public.files
@@ -74,6 +79,7 @@ const deleteFile = (id) => {
 };
 
 module.exports = {
+    getAllFilesUnfettered,
     getAllFiles,
     getOneFile,
     getOneOrNoneFile,

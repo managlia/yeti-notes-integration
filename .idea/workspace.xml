@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0488fb2c-764b-482a-b994-493d559293c5" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/api/controllers/chat-controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/controllers/chatter-controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/integration/chat-repository.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/integration/chatter-repository.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/service/chat-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/service/chatter-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/upload_3667d06c66be27850d532781f27d31dd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/upload_4521d782dfeb3ade30bc3a36067cf4a2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/upload_4b6b5559bbffb29df3d5cf61422908f8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/upload_5aef871789dca5a1c0c680dae0885560" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/upload_8a95b5f733fb6432d7833f8e0e2b7380" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/upload_bb726e00616103069401371e066f210c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/upload_cdb913005c956b53b1a479411253bcdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/controllers/files-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/files-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/integration/files-repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/integration/files-repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/service/file-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/service/file-service.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +36,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="files-controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="plain-routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/routes/plain-routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="35" selection-start-line="35" selection-end-line="35" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="files-controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/controllers/files-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="351">
+              <caret line="100" column="32" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chatter-controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/controllers/chatter-controller.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="30" column="17" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="17" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notes-controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/controllers/notes-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1854">
+              <caret line="103" selection-start-line="103" selection-end-line="110" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -40,10 +109,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nodemon</find>
-      <find>filter</find>
-      <find>exntityType</find>
-      <find>entityType</find>
       <find>entity</find>
       <find>ent</find>
       <find>err</find>
@@ -70,6 +135,10 @@
       <find>isv</find>
       <find>filesService</find>
       <find>note</find>
+      <find>getAllFilesUnfettered</find>
+      <find>router</find>
+      <find>fs</find>
+      <find>opts</find>
     </findStrings>
     <replaceStrings>
       <replace>;</replace>
@@ -90,8 +159,8 @@
       <replace>fileRepository</replace>
       <replace>filesRepository</replace>
       <replace>File</replace>
-      <replace>fileService</replace>
       <replace>file</replace>
+      <replace>fileService</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\workspace\yeti-notes-integration\api</dir>
@@ -110,7 +179,6 @@
         <option value="$PROJECT_DIR$/server-yeti.js" />
         <option value="$PROJECT_DIR$/api/util/console.js" />
         <option value="$PROJECT_DIR$/api/model/notes.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/dist/test.js" />
         <option value="$PROJECT_DIR$/api/util/loggerr.js" />
@@ -128,12 +196,19 @@
         <option value="$PROJECT_DIR$/api/util/converter.js" />
         <option value="$PROJECT_DIR$/api/util/constants.js" />
         <option value="$PROJECT_DIR$/api/model/yeti-file.js" />
-        <option value="$PROJECT_DIR$/api/service/file-service.js" />
-        <option value="$PROJECT_DIR$/api/routes/plain-routes.js" />
         <option value="$PROJECT_DIR$/api/util/file-validator.js" />
         <option value="$PROJECT_DIR$/api/controllers/notes-controller.js" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/api/service/chatter-service.js" />
+        <option value="$PROJECT_DIR$/api/integration/chatter-repository.js" />
+        <option value="$PROJECT_DIR$/api/controllers/chat-controller.js" />
+        <option value="$PROJECT_DIR$/api/integration/chat-repository.js" />
+        <option value="$PROJECT_DIR$/api/service/chat-service.js" />
         <option value="$PROJECT_DIR$/api/controllers/files-controller.js" />
+        <option value="$PROJECT_DIR$/api/service/file-service.js" />
+        <option value="$PROJECT_DIR$/api/integration/files-repository.js" />
+        <option value="$PROJECT_DIR$/api/routes/plain-routes.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -155,10 +230,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="50" />
-    <option name="y" value="26" />
+    <option name="x" value="11" />
+    <option name="y" value="20" />
     <option name="width" value="1623" />
-    <option name="height" value="992" />
+    <option name="height" value="841" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -275,12 +350,12 @@
       <workItem from="1523803352132" duration="12320000" />
       <workItem from="1523883479826" duration="22685000" />
       <workItem from="1523914786643" duration="30168000" />
-      <workItem from="1523999375115" duration="53145000" />
+      <workItem from="1523999375115" duration="62661000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118318000" />
+    <option name="totallyTimeSpent" value="127834000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -289,10 +364,10 @@
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.24242425" />
-      <window_info id="npm" order="0" sideWeight="0.24285714" side_tool="true" visible="true" weight="0.19652265" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.2857143" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.75714284" visible="true" weight="0.19652265" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.35930735" />
+      <window_info id="npm" order="0" sideWeight="0.24242425" side_tool="true" visible="true" weight="0.19652265" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.2857143" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.75757575" visible="true" weight="0.19652265" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.28030303" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.3300866" />
@@ -322,37 +397,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api/controllers/notes-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/util/converter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/util/logger.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -485,13 +529,6 @@
     <entry file="file://$PROJECT_DIR$/server-yeti.js" />
     <entry file="file://$PROJECT_DIR$/api/util/console.js" />
     <entry file="file://$PROJECT_DIR$/dist/test.js" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/util/logger.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -503,16 +540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="51" lean-forward="true" selection-start-line="47" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
@@ -533,13 +560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/integration/files-repository.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -581,41 +601,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/integration/notes-repository.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" lean-forward="true" selection-start-line="2" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/util/converter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="21" column="28" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/controllers/notes-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-972">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/service/file-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -626,17 +615,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/api/service/chatter-service.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/integration/chatter-repository.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/controllers/chat-controller.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/integration/chat-repository.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/service/chat-service.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/service/file-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/integration/files-repository.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="55" column="25" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/integration/notes-repository.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" lean-forward="true" selection-start-line="2" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/controllers/chatter-controller.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/controllers/notes-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1854">
+          <caret line="103" selection-start-line="103" selection-end-line="110" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/plain-routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="555">
+          <caret line="35" selection-start-line="35" selection-end-line="35" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/controllers/files-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="351">
+          <caret line="100" column="32" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
         </state>
       </provider>
     </entry>

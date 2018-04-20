@@ -15,13 +15,18 @@ const Converter = require('../util/converter');
 
 
 const getAllFiles = (req, res) => {
-    logger.abcde('getting all files whether there are fitlers or not', __function, __line, __file);
+    logger.abcde('getting all files whether there are filters or not', __function, __line, __file);
     const params = new URLSearchParams(parseUrl(req).query);
     const entityType = params.get('entityType');
     const entityId = params.get('entityId');
-    if( !entityType || !entityId ) {
+    if( !entityType && !entityId ) {
+        logger.abcde('Going unfettered', __function, __line, __file);
+        fileService.getAllFilesUnfettered().then((result) => wrapResponse(res, result, Constants.HTTP_200));
+    } else if( !entityType || !entityId ) {
+        logger.abcde('Unhappy because of half baked params', __function, __line, __file);
         wrapError(Constants.PARAM_ERROR, Constants.PARAM_ERROR.code);
     } else {
+        logger.abcde('Going with the fettered', __function, __line, __file);
         fileService.getAllFiles(entityType, entityId).then((result) => wrapResponse(res, result, Constants.HTTP_200));
     }
 };
