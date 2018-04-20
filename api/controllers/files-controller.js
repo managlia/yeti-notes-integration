@@ -31,20 +31,14 @@ const getOneFile = (req, res) => {
     const id = req.params.id;
     fileService.getOneFile(id)
         .then((result) => {
-
-
             res.setHeader('Content-Disposition', `attachment; filename="${result.fileName}"`);
-            // res.setHeader('Content-Transfer-Encoding', 'binary');
             res.setHeader('Content-Type', result.fileType );
             res.writeHead(200, {"Content-Type": result.fileType });
             const src = fs.createReadStream( `./${result.fileStoragePath}` );
             src.pipe(res);
-            src.on('end', () => {
-                res.end();
-            });
-
-
-            return res;
+             src.on('end', () => {
+                 res.end();
+             });
         })
         .catch((err) => wrapError(res, err));
 };

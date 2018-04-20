@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0488fb2c-764b-482a-b994-493d559293c5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/api/controllers/files-controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/integration/files-repository.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/model/yeti-file.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/service/file-service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/util/file-validator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/notes-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/notes-controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/integration/notes-repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/integration/notes-repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/model/note.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/model/yeti-note.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/plain-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/plain-routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/service/note-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/service/note-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/util/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/util/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/util/converter.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/util/converter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/files-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/files-controller.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,95 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="notes-controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/controllers/notes-controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-972">
-              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="converter.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/util/converter.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="21" column="28" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="files-controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/controllers/files-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="notes-repository.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/integration/notes-repository.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" lean-forward="true" selection-start-line="2" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="file-validator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/util/file-validator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="notes-validator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/util/notes-validator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plain-routes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/routes/plain-routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="file-service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/service/file-service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="note-service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/service/note-service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="39" selection-start-line="34" selection-end-line="39" />
+            <state relative-caret-position="319">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -159,14 +61,14 @@
       <find>fileRepository</find>
       <find>addFile</find>
       <find>Note</find>
-      <find>isv</find>
       <find>validator</find>
       <find>formidable</find>
       <find>path</find>
       <find>url</find>
       <find>filesSer</find>
-      <find>filesService</find>
       <find>error</find>
+      <find>isv</find>
+      <find>filesService</find>
       <find>note</find>
     </findStrings>
     <replaceStrings>
@@ -373,12 +275,12 @@
       <workItem from="1523803352132" duration="12320000" />
       <workItem from="1523883479826" duration="22685000" />
       <workItem from="1523914786643" duration="30168000" />
-      <workItem from="1523999375115" duration="48918000" />
+      <workItem from="1523999375115" duration="53145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114091000" />
+    <option name="totallyTimeSpent" value="118318000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -387,10 +289,10 @@
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.2564935" />
-      <window_info id="npm" order="0" sideWeight="0.24163027" side_tool="true" visible="true" weight="0.19652265" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.24242425" />
+      <window_info id="npm" order="0" sideWeight="0.24285714" side_tool="true" visible="true" weight="0.19652265" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.2857143" />
-      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.75836974" visible="true" weight="0.19652265" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.75714284" visible="true" weight="0.19652265" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.28030303" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.3300866" />
@@ -733,8 +635,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/controllers/files-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="319">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
