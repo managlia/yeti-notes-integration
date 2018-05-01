@@ -1,37 +1,40 @@
 const parseUrl = require('parseurl');
 const {URLSearchParams} = require('url');
 
-const notesService = require('../service/note-service');
+const memoService = require('../service/memo-service');
 const commValidator = require('../util/comm-validator');
 const Constants = require('../util/constants');
 const logger = require('../util/logger');
 
-const getAllNotes = (req, res) => {
-    logger.abcde('getting all notes whether there are fitlers or not', __function, __line, __file);
+const getAllMemos = (req, res) => {
+    logger.abcde('getting all memos whether there are fitlers or not', __function, __line, __file);
     const params = new URLSearchParams(parseUrl(req).query);
     const filterString = params.get('filter');
-    const entityType = params.get('entityType');
-    const entityId = params.get('entityId');
-    if( !entityType || !entityId ) {
-        wrapError(res, Constants.PARAM_ERROR, Constants.PARAM_ERROR.code);
-    } else {
-        notesService.getAllNotes('note', filterString, entityType, entityId).then((result) => wrapResponse(res, result, Constants.HTTP_200));
-    }
+    var userId = req.headers['x-check-id'];
+
+    console.log('->');
+    console.log('->', JSON.stringify(req.headers));
+    console.log('->', userId);
+    console.log('->');
+
+
+    memoService.getAllMemos('memo', userId, filterString)
+        .then((result) => wrapResponse(res, result, Constants.HTTP_200));
 };
 
-const getOneNote = (req, res) => {
-    logger.abcde('getting one note; an existing id is required', __function, __line, __file);
+const getOneMemo = (req, res) => {
+    logger.abcde('getting one memo; an existing id is required', __function, __line, __file);
     const id = req.params.id;
-    notesService.getOneNote(id)
+    memoService.getOneMemo(id)
         .then((result) => wrapResponse(res, result, Constants.HTTP_200))
         .catch((err) => wrapError(res, err));
 };
 
-const addNote = (req, res) => {
-    logger.abcde('adding a note; will get the value from the request body', __function, __line, __file);
-    const note = req.body;
-    if (commValidator.commValidForAdd(note)) {
-        notesService.addNote('note', note)
+const addMemo = (req, res) => {
+    logger.abcde('adding a memo; will get the value from the request body', __function, __line, __file);
+    const memo = req.body;
+    if (commValidator.commValidForAdd(memo)) {
+        memoService.addMemo('memo', memo)
             .then((result) => wrapResponse(res, result, Constants.HTTP_201))
             .catch((err) => wrapResponse(res, err));
     } else {
@@ -39,18 +42,18 @@ const addNote = (req, res) => {
     }
 };
 
-const updateNote = (req, res) => {
-    logger.abcde('updating an existing note; will validate a match between body id and urlstring id', __function, __line, __file);
+const updateMemo = (req, res) => {
+    logger.abcde('updating an existing memo; will validate a match between body id and urlstring id', __function, __line, __file);
     const id = req.params.id;
-    const note = req.body;
-    const noteId = req.body.noteId;
-    if (parseInt(id) !== parseInt(noteId)) {
+    const memo = req.body;
+    const memoId = req.body.memoId;
+    if (parseInt(id) !== parseInt(memoId)) {
         wrapError(res, Constants.ERROR_400);
     } else {
-        notesService.exists(id).then(
+        memoService.exists(id).then(
             (exists) => {
                 if (exists) {
-                    notesService.updateNote(note)
+                    memoService.updateMemo(memo)
                         .then((result) => wrapResponse(res, result, Constants.HTTP_202))
                         .catch((err) => wrapError(res, err))
                 } else {
@@ -61,13 +64,13 @@ const updateNote = (req, res) => {
     }
 };
 
-const deleteNote = (req, res) => {
-    logger.abcde('deleting one note; an existing id is required', __function, __line, __file);
+const deleteMemo = (req, res) => {
+    logger.abcde('deleting one memo; an existing id is required', __function, __line, __file);
     const id = req.params.id;
-    notesService.exists(id).then(
+    memoService.exists(id).then(
         (exists) => {
             if (exists) {
-                notesService.deleteNote(id)
+                memoService.deleteMemo(id)
                     .then((result) => wrapResponse(res, result, Constants.HTTP_202))
                     .catch((err) => wrapError(res, err))
             } else {
@@ -77,9 +80,9 @@ const deleteNote = (req, res) => {
         .catch((err) => wrapError(res, err));
 };
 
-const patchNotes = (req, res) => {
+const patchMemos = (req, res) => {
     logger.abcde('patch is not configured to do anything yet', __function, __line, __file);
-    notesService.patchNotes().then((result) => wrapResponse(res, result, Constants.HTTP_200));
+    memoService.patchMemos().then((result) => wrapResponse(res, result, Constants.HTTP_200));
 };
 
 /* private */
@@ -102,11 +105,11 @@ const wrapError = (res, err) => {
 };
 
 module.exports = {
-    getAllNotes,
-    getOneNote,
-    addNote,
-    updateNote,
-    deleteNote,
-    patchNotes
+    getAllMemos,
+    getOneMemo,
+    addMemo,
+    updateMemo,
+    deleteMemo,
+    patchMemos
 };
 

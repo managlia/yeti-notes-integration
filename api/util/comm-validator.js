@@ -1,16 +1,21 @@
 const validator = require('validator');
 const validCodes = [200, 201, 202, 204, 404, 404, 500];
 
-const noteValidForAdd = (note) => {
+
+const auditValidForAdd = (audit) => {
+    return true; // todo: add logic for validation
+};
+
+const commValidForAdd = (note) => {
     return requiredFieldsPopulated(note);
 };
 
-const noteValidForUpdate = (note) => {
+const commValidForUpdate = (note) => {
     return idPopulated(note) &&
         requiredFieldsPopulated(note);
 };
 
-const noteValidForDelete = (note) => {
+const commValidForDelete = (note) => {
     return idPopulated(note);
 };
 
@@ -30,9 +35,10 @@ const idPopulated = (note) => {
 };
 
 module.exports = {
-    noteValidForAdd,
-    noteValidForUpdate,
-    noteValidForDelete,
+    auditValidForAdd,
+    commValidForAdd,
+    commValidForUpdate,
+    commValidForDelete,
     isValidErrorCode
 };
 

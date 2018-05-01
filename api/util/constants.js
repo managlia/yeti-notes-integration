@@ -16,6 +16,9 @@ exports.ERROR_NO_FILE = {message: 'No file was included in the upload.', code: 4
 exports.CONTEXT_ROOT = 'yetix';
 exports.NOTES_PATH = 'notes';
 exports.FILE_PATH = 'files';
+exports.MEMOS_PATH = 'memos';
+exports.ANNOUNCEMENTS_PATH = 'announcements';
+exports.COMMAUDITS_PATH = 'commaudits';
 
 exports.dbConnection = pgp(PG_PATH);
 

@@ -1,37 +1,31 @@
 const parseUrl = require('parseurl');
 const {URLSearchParams} = require('url');
 
-const notesService = require('../service/note-service');
+const announcementService = require('../service/announcement-service');
 const commValidator = require('../util/comm-validator');
 const Constants = require('../util/constants');
 const logger = require('../util/logger');
 
-const getAllNotes = (req, res) => {
-    logger.abcde('getting all notes whether there are fitlers or not', __function, __line, __file);
+const getAllAnnouncements = (req, res) => {
+    logger.abcde('getting all announcements whether there are fitlers or not', __function, __line, __file);
     const params = new URLSearchParams(parseUrl(req).query);
     const filterString = params.get('filter');
-    const entityType = params.get('entityType');
-    const entityId = params.get('entityId');
-    if( !entityType || !entityId ) {
-        wrapError(res, Constants.PARAM_ERROR, Constants.PARAM_ERROR.code);
-    } else {
-        notesService.getAllNotes('note', filterString, entityType, entityId).then((result) => wrapResponse(res, result, Constants.HTTP_200));
-    }
+    announcementService.getAllAnnouncements('announcement', filterString).then((result) => wrapResponse(res, result, Constants.HTTP_200));
 };
 
-const getOneNote = (req, res) => {
-    logger.abcde('getting one note; an existing id is required', __function, __line, __file);
+const getOneAnnouncement = (req, res) => {
+    logger.abcde('getting one announcement; an existing id is required', __function, __line, __file);
     const id = req.params.id;
-    notesService.getOneNote(id)
+    announcementService.getOneAnnouncement(id)
         .then((result) => wrapResponse(res, result, Constants.HTTP_200))
         .catch((err) => wrapError(res, err));
 };
 
-const addNote = (req, res) => {
-    logger.abcde('adding a note; will get the value from the request body', __function, __line, __file);
-    const note = req.body;
-    if (commValidator.commValidForAdd(note)) {
-        notesService.addNote('note', note)
+const addAnnouncement = (req, res) => {
+    logger.abcde('adding a announcement; will get the value from the request body', __function, __line, __file);
+    const announcement = req.body;
+    if (commValidator.commValidForAdd(announcement)) {
+        announcementService.addAnnouncement('announcement', announcement)
             .then((result) => wrapResponse(res, result, Constants.HTTP_201))
             .catch((err) => wrapResponse(res, err));
     } else {
@@ -39,18 +33,18 @@ const addNote = (req, res) => {
     }
 };
 
-const updateNote = (req, res) => {
-    logger.abcde('updating an existing note; will validate a match between body id and urlstring id', __function, __line, __file);
+const updateAnnouncement = (req, res) => {
+    logger.abcde('updating an existing announcement; will validate a match between body id and urlstring id', __function, __line, __file);
     const id = req.params.id;
-    const note = req.body;
-    const noteId = req.body.noteId;
-    if (parseInt(id) !== parseInt(noteId)) {
+    const announcement = req.body;
+    const announcementId = req.body.announcementId;
+    if (parseInt(id) !== parseInt(announcementId)) {
         wrapError(res, Constants.ERROR_400);
     } else {
-        notesService.exists(id).then(
+        announcementService.exists(id).then(
             (exists) => {
                 if (exists) {
-                    notesService.updateNote(note)
+                    announcementService.updateAnnouncement(announcement)
                         .then((result) => wrapResponse(res, result, Constants.HTTP_202))
                         .catch((err) => wrapError(res, err))
                 } else {
@@ -61,13 +55,13 @@ const updateNote = (req, res) => {
     }
 };
 
-const deleteNote = (req, res) => {
-    logger.abcde('deleting one note; an existing id is required', __function, __line, __file);
+const deleteAnnouncement = (req, res) => {
+    logger.abcde('deleting one announcement; an existing id is required', __function, __line, __file);
     const id = req.params.id;
-    notesService.exists(id).then(
+    announcementService.exists(id).then(
         (exists) => {
             if (exists) {
-                notesService.deleteNote(id)
+                announcementService.deleteAnnouncement(id)
                     .then((result) => wrapResponse(res, result, Constants.HTTP_202))
                     .catch((err) => wrapError(res, err))
             } else {
@@ -77,9 +71,9 @@ const deleteNote = (req, res) => {
         .catch((err) => wrapError(res, err));
 };
 
-const patchNotes = (req, res) => {
+const patchAnnouncements = (req, res) => {
     logger.abcde('patch is not configured to do anything yet', __function, __line, __file);
-    notesService.patchNotes().then((result) => wrapResponse(res, result, Constants.HTTP_200));
+    announcementService.patchAnnouncements().then((result) => wrapResponse(res, result, Constants.HTTP_200));
 };
 
 /* private */
@@ -102,11 +96,11 @@ const wrapError = (res, err) => {
 };
 
 module.exports = {
-    getAllNotes,
-    getOneNote,
-    addNote,
-    updateNote,
-    deleteNote,
-    patchNotes
+    getAllAnnouncements,
+    getOneAnnouncement,
+    addAnnouncement,
+    updateAnnouncement,
+    deleteAnnouncement,
+    patchAnnouncements
 };
 

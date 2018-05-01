@@ -32,7 +32,7 @@ const plainRouter = require('./api/routes/plain-routes'); //for local using "npm
 
 const server = http.createServer(function (req, res) {
     res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Cache-Control, Accept, X-TEST-EXTRA");
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Cache-Control, Accept, X-CHECK-ID, X-HOST-ID");
     if (req.method === 'OPTIONS') {
         res.writeHead(200);
         res.end();

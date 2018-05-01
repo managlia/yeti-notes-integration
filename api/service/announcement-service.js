@@ -3,15 +3,15 @@ const Constants = require('../util/constants');
 const Converter = require('../util/converter');
 const logger = require('../util/logger');
 
-const getAllNotes = (commType, filterString, entityType, entityId) => {
+const getAllAnnouncements = (commType, filterString) => {
     logger.abcde(`will call one of two functions based on value of filterString (${filterString})`, __function, __line, __file);
     if (filterString) {
-        return getAllWithFilter(commType, filterString, entityType, entityId);
+        return getAllWithFilter(commType, filterString);
     }
-    return getAllWithoutFilter(commType, entityType, entityId);
+    return getAllWithoutFilter(commType);
 };
 
-const getOneNote = (id) => {
+const getOneAnnouncement = (id) => {
     logger.abcde(`will get one using id (${id})`, __function, __line, __file);
     return new Promise((resolve, reject) => {
         commRepository.getOneComm(id)
@@ -30,26 +30,26 @@ const exists = (id) => {
     });
 };
 
-const addNote = (commType, note) => {
-    logger.abcde(`adding this new note: ${JSON.stringify(note)}`, __function, __line, __file);
+const addAnnouncement = (commType, announcement) => {
+    logger.abcde(`adding this new announcement: ${JSON.stringify(announcement)}`, __function, __line, __file);
     return new Promise((resolve, reject) => {
-        commRepository.addComm(commType, note)
+        commRepository.addComm(commType, announcement)
             .then((result) => resolve(Converter.mapRespositoryCommToModel(result)))
             .catch((err) => reject(standardizeError(err, Constants.HTTP_400)));
     });
 };
 
-const updateNote = (note) => {
-    logger.abcde(`updating this existing note: ${JSON.stringify(note)}`, __function, __line, __file);
+const updateAnnouncement = (announcement) => {
+    logger.abcde(`updating this existing announcement: ${JSON.stringify(announcement)}`, __function, __line, __file);
     return new Promise((resolve, reject) => {
-        commRepository.updateComm(note)
+        commRepository.updateComm(announcement)
             .then((result) => resolve(Converter.mapRespositoryCommToModel(result)))
             .catch((err) => reject(standardizeError(err, Constants.HTTP_400)));
     });
 };
 
-const deleteNote = (id) => {
-    logger.abcde(`will delete one note using id (${id})`, __function, __line, __file);
+const deleteAnnouncement = (id) => {
+    logger.abcde(`will delete one announcement using id (${id})`, __function, __line, __file);
     return new Promise((resolve, reject) => {
         commRepository.deleteComm(id)
             .then((result) => resolve(Converter.mapRespositoryCommToModel(result)))
@@ -57,7 +57,7 @@ const deleteNote = (id) => {
     });
 };
 
-const patchNotes = () => {
+const patchAnnouncements = () => {
     logger.abcde('patch is not configured to do anything yet', __function, __line, __file);
     return new Promise((resolve, reject) => {
         resolve('patch is not configured');
@@ -65,20 +65,20 @@ const patchNotes = () => {
 };
 
 /* private */
-const getAllWithoutFilter = (commType, entityType, entityId) => {
+const getAllWithoutFilter = (commType) => {
     logger.abcde(`unfettered request`, __function, __line, __file);
     return new Promise((resolve, reject) => {
-        commRepository.getAllComms(commType, entityType, entityId)
+        commRepository.getAllAnnouncements(commType)
             .then((result) => resolve(result.map(e => Converter.mapRespositoryCommToModel(e))))
             .catch((err) => reject(standardizeError(err, Constants.HTTP_400)));
     });
 };
 
 /* private */
-const getAllWithFilter = (commType, filterString, entityType, entityId) => {
+const getAllWithFilter = (commType, filterString) => {
     logger.abcde(`filtered request with ${filterString}`, __function, __line, __file);
     return new Promise((resolve, reject) => {
-        commRepository.getAllCommsFiltered(commType, filterString, entityType, entityId)
+        commRepository.getAllAnnouncementsFiltered(commType, filterString)
             .then((result) => resolve(result.map(e => Converter.mapRespositoryCommToModel(e))))
             .catch((err) => reject(standardizeError(err, Constants.HTTP_400)))
     });
@@ -94,11 +94,11 @@ const standardizeError = (error, code) => {
 };
 
 module.exports = {
-    getAllNotes,
-    getOneNote,
+    getAllAnnouncements,
+    getOneAnnouncement,
     exists,
-    addNote,
-    updateNote,
-    deleteNote,
-    patchNotes
+    addAnnouncement,
+    updateAnnouncement,
+    deleteAnnouncement,
+    patchAnnouncements
 };

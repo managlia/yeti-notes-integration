@@ -1,4 +1,4 @@
-class YetiNote {
+class YetiComm {
     // noteId;
     // creatorId;
     // creatorExternalId;
@@ -14,4 +14,4 @@ class YetiNote {
     }
 }
 
-module.exports = YetiNote;
+module.exports = YetiComm;

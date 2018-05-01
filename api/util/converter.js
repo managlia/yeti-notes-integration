@@ -1,19 +1,48 @@
-const YetiNote = require('../model/yeti-note');
+const YetiComm = require('../model/yeti-comm');
 const YetiFile = require('../model/yeti-file');
+const YetiAudit = require('../model/yeti-audit');
 
-const mapRespositoryNoteToModel = (repositoryNote) => {
-    let yetiNote = new YetiNote();
-    yetiNote.noteId = repositoryNote.note_id;
-    yetiNote.creatorId = repositoryNote.note_creator_id;
-    yetiNote.creatorExternalId = repositoryNote.note_creator_external_id;
-    yetiNote.description = repositoryNote.note_description;
-    yetiNote.value = repositoryNote.note_value;
-    yetiNote.entityType = repositoryNote.linked_to_entity_type;
-    yetiNote.entityId = repositoryNote.linked_to_entity_id;
-    yetiNote.isArchived = repositoryNote.note_archived;
-    yetiNote.createDate = repositoryNote.note_create_date;
-    yetiNote.updateDate = repositoryNote.note_last_update_date;
-    return yetiNote;
+const mapRespositoryAuditToModel = (repositoryAudit) => {
+    console.log('mapping audit ' + repositoryAudit );
+    let yetiAudit = new YetiAudit();
+    yetiAudit.commId = repositoryAudit.note_id;
+    yetiAudit.userId = repositoryAudit.note_viewer_id;
+    yetiAudit.firstSeenDate = repositoryAudit.note_first_retrieved_date;
+    yetiAudit.lastSeenDate = repositoryAudit.note_last_retrieved_date;
+    yetiAudit.haveRead = repositoryAudit.note_acknowledged;
+    yetiAudit.havePinned = repositoryAudit.note_pinned;
+    return yetiAudit;
+};
+
+const mapRespositoryCommToModel = (repositoryNote) => {
+    console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+    console.log('mapping:::: ' + JSON.stringify(repositoryNote));
+    console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+    let yetiComm = new YetiComm();
+    yetiComm.noteId = repositoryNote.note_id;
+    yetiComm.creatorId = repositoryNote.note_creator_id;
+    yetiComm.creatorExternalId = repositoryNote.note_creator_external_id;
+    yetiComm.description = repositoryNote.note_description;
+    yetiComm.value = repositoryNote.note_value;
+    yetiComm.entityType = repositoryNote.linked_to_entity_type;
+    yetiComm.entityId = repositoryNote.linked_to_entity_id;
+    yetiComm.isArchived = repositoryNote.note_archived;
+    yetiComm.createDate = repositoryNote.note_create_date;
+    yetiComm.updateDate = repositoryNote.note_last_update_date;
+    yetiComm.recipients = repositoryNote.recipients;
+    yetiComm.type = repositoryNote.note_type;
+
+    if( repositoryNote.na_note_id ) {
+        yetiComm.audit = {
+            commId: repositoryNote.na_note_id,
+            userId: repositoryNote.note_viewer_id,
+            firstSeenDate: repositoryNote.note_first_retrieved_date,
+            lastSeenDate: repositoryNote.note_last_retrieved_date,
+            haveRead: repositoryNote.note_acknowledged,
+            havePinned: repositoryNote.note_pinned,
+        }
+    }
+    return yetiComm;
 };
 
 const mapRespositoryFileToModel = (repositoryFile) => {
@@ -45,7 +74,8 @@ const mapRequestToFile = (file, payload) => {
 };
 
 module.exports = {
-    mapRespositoryNoteToModel,
+    mapRespositoryAuditToModel,
+    mapRespositoryCommToModel,
     mapRespositoryFileToModel,
     mapRequestToFile
 };
